@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>SAR Store — Safe GitHub Version</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header style="padding:16px;border-bottom:1px solid #eee">
+    <h1>SAR STORE</h1>
+    <nav><a href="index.html">Store</a> • <a href="admin.html">Admin</a></nav>
+  </header>
+
+  <main style="max-width:900px;margin:18px auto;padding:0 12px">
+    <section class="card">
+      <h2>Pilih Kategori & Produk</h2>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <select id="productSelect" style="flex:1;min-width:220px"></select>
+        <input id="nominalInput" placeholder="Nominal / amount (contoh: 5000 atau 100)" inputmode="numeric" style="width:180px">
+        <input id="targetInput" placeholder="Target (No HP / ID game)" style="flex:1;min-width:220px">
+      </div>
+      <div style="margin-top:10px;display:flex;gap:8px">
+        <button id="btnCalc">Hitung Harga</button>
+        <button id="btnOrder">Buat Pesanan (simpan di browser)</button>
+      </div>
+      <div id="priceResult" style="margin-top:12px"></div>
+    </section>
+
+    <section class="card" style="margin-top:16px">
+      <h3>Cek Pesanan</h3>
+      <input id="orderCode" placeholder="Masukkan kode pesanan untuk cek (auto-detect)">
+      <div id="order_check_result" style="margin-top:8px"></div>
+    </section>
+
+    <section class="card" style="margin-top:16px">
+      <h3>Informasi Robux</h3>
+      <div id="robuxInfo" style="padding:10px;background:#f6f8ff;border-radius:6px">
+        Estimasi masuk Robux: <b>7 - 8 hari kerja</b> (perkiraan)
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:16px">
+      <h3>Cara Kerja (Keamanan GitHub)</h3>
+      <ul>
+        <li>Admin password disimpan <i>lokal</i> di browser (LocalStorage) sebagai hash — <b>tidak</b> ada password di repo.</li>
+        <li>File ini aman untuk di-push ke GitHub publik karena tidak menyertakan kredensial sensitif.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer style="text-align:center;padding:20px;border-top:1px solid #eee">
+    SAR Store — safe github version
+  </footer>
+
+<script src="store.js"></script>
+<script src="order-check.js"></script>
+</body>
+</html>

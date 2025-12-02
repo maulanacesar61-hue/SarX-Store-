@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Admin — SAR Store (Safe)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main style="max-width:720px;margin:28px auto;padding:12px">
+    <h1>Admin Panel — SAR Store (Safe)</h1>
+
+    <div id="setupArea" class="card" style="display:none">
+      <h3>Set Admin Account (hanya terlihat jika belum ada admin)</h3>
+      <input id="setupUser" placeholder="Username (contoh: Sar)">
+      <input id="setupPass" placeholder="Password" type="password">
+      <div style="margin-top:8px">
+        <button id="btnSetup">Simpan Admin (lokal)</button>
+      </div>
+      <div style="margin-top:8px;font-size:13px;color:#666">Catatan: informasi ini disimpan di browser admin (LocalStorage) dan tidak ada di repo.</div>
+    </div>
+
+    <div id="loginArea" class="card">
+      <h3>Login Admin</h3>
+      <input id="loginUser" placeholder="Username">
+      <input id="loginPass" placeholder="Password" type="password">
+      <div style="margin-top:8px">
+        <button id="btnLogin">Login</button>
+      </div>
+      <div id="loginMsg" style="margin-top:8px;color:#b00"></div>
+    </div>
+
+    <div id="adminPanel" style="display:none" class="card">
+      <h3>Dashboard</h3>
+      <div style="display:flex;gap:8px;align-items:center">
+        <div>Signed in as: <b id="adminName"></b></div>
+        <button id="btnLogout" style="margin-left:auto">Logout</button>
+      </div>
+
+      <h4 style="margin-top:12px">Orders</h4>
+      <table id="ordersTable" style="width:100%;border-collapse:collapse">
+        <thead><tr><th style="text-align:left">ID</th><th>Produk</th><th>Target</th><th>Nominal</th><th>Harga</th><th>Status</th><th>Aksi</th></tr></thead>
+        <tbody id="ordersBody"></tbody>
+      </table>
+    </div>
+  </main>
+
+<script src="admin.js"></script>
+</body>
+</html>
